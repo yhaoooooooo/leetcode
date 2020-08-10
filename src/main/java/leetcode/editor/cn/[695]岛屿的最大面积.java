@@ -103,11 +103,11 @@ class Solution2 {
 
 
 
-        if (x > 1) {
+        if (x >= 1) {
             size += get(x - 1, y,grid, map, 0);
         }
 
-        if (y > 1) {
+        if (y >= 1) {
             size += get(x, y - 1, grid, map, 0);
         }
 
