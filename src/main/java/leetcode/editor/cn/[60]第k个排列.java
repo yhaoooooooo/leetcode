@@ -36,13 +36,16 @@
 
 package leetcode.editor.cn;
 
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class Solution60 {
 
     public static void main(String[] args) {
-        String permutation = getPermutation(3, 3);
+        String permutation = getPermutation(4, 9);
         System.out.println(permutation);
     }
 
@@ -75,11 +78,19 @@ class Solution60 {
             ll.add(result);
         }*/
 
+        List<String> left = null;
 
+        if (leftStrings.isEmpty()) {
+            ll.add(result);
+            return;
+        }
         for (int i = 0; i < leftStrings.size(); i++) {
 
+            left = new ArrayList<String>(leftStrings);
+            String s = leftStrings.get(i);
+            left.remove(s);
+            get(result + s, left);
         }
-
     }
 
 }
