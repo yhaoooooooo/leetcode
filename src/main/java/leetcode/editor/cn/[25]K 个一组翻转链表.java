@@ -28,6 +28,10 @@
 package leetcode.editor.cn;
 //leetcode submit region begin(Prohibit modification and deletion)
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 // Definition for singly-linked list.
    class ListNode {
       int val;
@@ -37,10 +41,55 @@ package leetcode.editor.cn;
 class Solution25 {
     public ListNode reverseKGroup(ListNode head, int k) {
 
-        while (head.next != null){
+
+        ListNode node = head;
+        int num = 0;
+        List<ListNode> list = new ArrayList<ListNode>();
+
+        ListNode firtNode = null;
+        while (node != null){
+            if (num % k == 0 ) {
+                list.add(node);
+            }
+            num++;
+
+            if (num == k || (num <= k && node.next == null)) {
+                firtNode = node;
+            }
+
+            node = node.next;
+
         }
 
-        return null;
+
+
+        if (!list.isEmpty()) {
+            for (int i = 0; i < list.size(); i++) {
+                ListNode listNode = list.get(i);
+                num = 0;
+
+                ListNode next = null;
+                ListNode pre = null;
+                ListNode lastGroupEndNode = listNode;
+                while (listNode != null && num < k) {
+
+                    if (num == 0 )  {
+                        pre = i < list.size() - 2 ? list.get(i+1) : null;
+                    } else {
+                        pre = listNode;
+                    }
+                    next = listNode.next;
+
+                    listNode.next = pre;
+                    pre = listNode;
+                    listNode = next;
+                    num ++;
+                }
+
+            }
+        }
+
+        return firtNode;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
