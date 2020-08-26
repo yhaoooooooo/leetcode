@@ -33,12 +33,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Definition for singly-linked list.
-   class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
+
 class Solution25 {
+    class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
     public ListNode reverseKGroup(ListNode head, int k) {
 
 

@@ -24,7 +24,7 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 package leetcode.editor.cn;
-class Solution {
+class Solution111 {
 
     public static void main(String[] args) {
         System.out.println(longestCommonPrefix(new String[]{"abc"}));

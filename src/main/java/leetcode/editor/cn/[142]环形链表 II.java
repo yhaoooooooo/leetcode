@@ -53,7 +53,7 @@ package leetcode.editor.cn;
  *     }
  * }
  */
- class Solution {
+ class Solution142 {
     public ListNode detectCycle(ListNode head) {
 
         if (head == null || head.next == null) {
