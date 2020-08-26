@@ -26,7 +26,7 @@
 package leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution647 {
     public static void main(String[] args) {
         System.out.println(findLengthOfLCIS(new int[]{1,3,5,6,7}));
     }

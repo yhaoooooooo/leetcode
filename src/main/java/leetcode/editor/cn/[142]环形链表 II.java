@@ -53,7 +53,7 @@ package leetcode.editor.cn;
  *     }
  * }
  */
- class Solution142 {
+ class Solution {
     public ListNode detectCycle(ListNode head) {
 
         if (head == null || head.next == null) {
@@ -65,6 +65,7 @@ package leetcode.editor.cn;
 
 
         ListNode beginNode = null;
+        int position = 0;
         one: while (node.next != null) {
             ListNode currentNode = node;
             ListNode nextNode = currentNode.next;
@@ -76,6 +77,7 @@ package leetcode.editor.cn;
                 nextNode = nextNode.next;
             }
             node = node.next;
+            position++;
         }
 
         return null;
