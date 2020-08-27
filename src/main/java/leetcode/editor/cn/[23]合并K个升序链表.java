@@ -58,7 +58,7 @@ package leetcode.editor.cn;
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Solution23 {
 
 
     /**

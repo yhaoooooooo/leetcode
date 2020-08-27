@@ -39,7 +39,7 @@ import com.sun.glass.ui.Size;
 import java.util.*;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution2 {
+class Solution695 {
 
     public static void main(String[] args) {
         int[][] data = new int[2][2];
