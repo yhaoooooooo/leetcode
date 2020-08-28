@@ -43,7 +43,7 @@
 package leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution122 {
     public int maxProfit(int[] prices) {
 
         int maxProfit = 0;
