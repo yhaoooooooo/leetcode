@@ -24,7 +24,7 @@ package leetcode.editor.cn;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution3 {
+class Solution43 {
     public String multiply(String num1, String num2) {
         int upNum = 0;
 

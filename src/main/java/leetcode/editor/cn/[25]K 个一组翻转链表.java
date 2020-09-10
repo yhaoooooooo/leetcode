@@ -26,71 +26,79 @@
 // 👍 675 👎 0
 
 package leetcode.editor.cn;
-//leetcode submit region begin(Prohibit modification and deletion)
-
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+//leetcode submit region begin(Prohibit modification and deletion)
+
+
 
 // Definition for singly-linked list.
 
 class Solution25 {
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
     public ListNode reverseKGroup(ListNode head, int k) {
 
+        ListNode hair = new ListNode(0);
+        hair.next = head;
+        ListNode pre = hair;
 
-        ListNode node = head;
-        int num = 0;
-        List<ListNode> list = new ArrayList<ListNode>();
-
-        ListNode firtNode = null;
-        while (node != null){
-            if (num % k == 0 ) {
-                list.add(node);
-            }
-            num++;
-
-            if (num == k || (num <= k && node.next == null)) {
-                firtNode = node;
-            }
-
-            node = node.next;
-
-        }
-
-
-
-        if (!list.isEmpty()) {
-            for (int i = 0; i < list.size(); i++) {
-                ListNode listNode = list.get(i);
-                num = 0;
-
-                ListNode next = null;
-                ListNode pre = null;
-                ListNode lastGroupEndNode = listNode;
-                while (listNode != null && num < k) {
-
-                    if (num == 0 )  {
-                        pre = i < list.size() - 2 ? list.get(i+1) : null;
-                    } else {
-                        pre = listNode;
-                    }
-                    next = listNode.next;
-
-                    listNode.next = pre;
-                    pre = listNode;
-                    listNode = next;
-                    num ++;
-                }
-
-            }
-        }
-
-        return firtNode;
+        return null;
     }
+    /*
+    当前方法没有考虑 未满足k长度的 不翻转的情况
+    public ListNode reverseKGroup(ListNode head, int k) {
+        List<ListNode> list = splitList(head, k);
+        ListNode newListNode =  reverseAndMerge(list, 0 , list.size() - 1);
+        return newListNode;
+    }
+
+    private ListNode reverseAndMerge(List<ListNode> list, int left, int right) {
+        ListNode listNode = null;
+        if (left >= right) {
+            listNode = list.get(left);
+            listNode = reverseList(listNode);
+        } else {
+            int mid = (left + right) / 2;
+            ListNode leftNode = reverseAndMerge(list, left, mid);
+            ListNode rightNode = reverseAndMerge(list, mid + 1, right);
+            listNode = leftNode;
+            while (leftNode != null && leftNode.next != null) {
+                leftNode = leftNode.next;
+            }
+            leftNode.next = rightNode;
+        }
+        return listNode;
+    }
+    private ListNode reverseList(ListNode listNode) {
+        ListNode pre = null;
+        while (listNode != null) {
+            ListNode tmp = listNode;
+            ListNode next = listNode.next;
+            tmp.next = pre;
+            pre = listNode;
+            listNode = next;
+            if (next == null) {
+                return tmp;
+            }
+        }
+        return null;
+    }
+    private List<ListNode> splitList(ListNode head, int k) {
+        List<ListNode> list = new ArrayList<>();
+        ListNode tmp = head;
+        ListNode pre = null;
+        int index = 0;
+        while (tmp != null) {
+            if (index % k == 0) {
+                list.add(tmp);
+                if (pre != null) {
+                    pre.next = null;
+                }
+            }
+            pre = tmp;
+            tmp = pre.next;
+            index++;
+        }
+        return list;
+    }*/
 }
 //leetcode submit region end(Prohibit modification and deletion)
