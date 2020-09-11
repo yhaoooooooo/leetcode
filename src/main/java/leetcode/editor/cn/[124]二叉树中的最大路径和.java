@@ -40,11 +40,39 @@ package leetcode.editor.cn;
  *     TreeNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution124 {
+
+    private int max = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
-
-
-        return 0;
+        function(root);
+        return max;
     }
+
+    private int function(TreeNode parent) {
+
+        if (parent == null) {
+            return 0;
+        }
+
+        int leftMax = Math.max(function(parent.left),0);
+        int rightMax = Math.max(function(parent.right),0);
+
+        max =Math.max(max, parent.val + leftMax + rightMax);
+        return parent.val + Math.max(leftMax, rightMax);
+    }
+
+//    private int function(TreeNode root, int maxPathSum) {
+//        if (root == null) {
+//            return maxPathSum;
+//        }
+//        int leftV = root.left == null || root.left.val < 0 ? 0 : root.left.val;
+//        int rightV = root.right == null || root.right.val < 0 ? 0 : root.right.val;
+//
+//        maxPathSum = Math.max(maxPathSum, leftV + rightV + root.val);
+//        int leftMaxPathSum = function(root.left, maxPathSum);
+//        int rightMaxPathSum = function(root.right, maxPathSum);
+//        maxPathSum = Math.max(leftMaxPathSum, rightMaxPathSum);
+//        return maxPathSum;
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
