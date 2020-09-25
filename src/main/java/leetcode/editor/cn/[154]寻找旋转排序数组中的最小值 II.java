@@ -28,7 +28,7 @@
 package leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution154 {
     public int findMin(int[] nums) {
         int result = binarySearch(nums, 0, nums.length - 1);
         return result;
