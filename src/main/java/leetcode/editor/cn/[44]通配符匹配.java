@@ -60,7 +60,7 @@
 package leetcode.editor.cn;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class Solution44 {
     public boolean isMatch(String s, String p) {
 
         if (s == null || p == null ) {

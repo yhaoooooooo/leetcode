@@ -43,7 +43,7 @@ package leetcode.editor.cn;
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution4 {
+class Solution151 {
     public static String reverseWords(String s) {
         if (s == null) {
             return "";
