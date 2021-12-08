@@ -27,7 +27,7 @@ import java.awt.geom.Rectangle2D;
  *     ListNode(int x) { val = x; }
  * }
  */
-class Solution22 {
+class Solution02 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         ListNode listNode = new ListNode(0);
